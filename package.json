@@ -5,6 +5,9 @@
     "node-fetch": "^2.6.6",
     "ts-node": "^10.4.0"
   },
+  "scripts": {
+    "start": "ts-node generate.ts"
+  },
   "devDependencies": {
     "@types/ejs": "^3.1.0",
     "@types/jsdom": "^16.2.14",
