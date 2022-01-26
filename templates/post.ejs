@@ -3,5 +3,5 @@
 	<cite><a href="<%= post.author.url %>"><%- post.author.name %></a></cite>
 	<time datetime="<%= new Date(post.datetime).toISOString() %>"><%- timeAndDate(new Date(post.datetime)) %> </time>
 	<p><a href="<%= post.url %>"><%- post.excerpt %></a></p>
-	<a href="<%= post.url %>"><img src="<%= post.image.url %>" alt="<%= post.image.alt %>" /></a>
+	<a href="<%= post.url %>"><img src="<%= post.image.url %>" alt="<%= post.image.alt %>" loading="lazy" /></a>
 </li>

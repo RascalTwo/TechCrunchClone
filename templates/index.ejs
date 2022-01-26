@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="TechCrunch - Reporting on the business of technology, startups, venture capital funding, and Silicon Valley" />
+		<link rel="icon" href="assets/favicon.ico" />
 		<title>TechCrunch - Startup and Technology news</title>
 	</head>
 
@@ -35,7 +37,7 @@
 						<details>
 							<summary>More</summary>
 
-							<li><a href="https://techcrunch.com/"><img src="assets/logo.svg" alt="Tech Crunch logo" /></a></li>
+							<a href="https://techcrunch.com/"><img src="assets/logo.svg" alt="Tech Crunch logo" /></a>
 							<span>More TechCrunch</span>
 							<ul>
 								<li><a href="https://techcrunch.com/startup-battlefield/">Startup Battlefield</a></li>
@@ -55,13 +57,13 @@
 				<section>
 					<h1><%- featured[0].title %></h1>
 					<cite><a href="<%= featured[0].author.url %>"><%- featured[0].author.name %></a></cite>
-					<img src="<%= featured[0].image.url %>" alt="<%= featured[0].image.alt %>" />
+					<img src="<%= featured[0].image.url %>" alt="<%= featured[0].image.alt %>" loading="lazy" />
 				</section>
 				<section>
 					<ul>
 						<% featured.slice(1).forEach(mini => { %>
 							<li>
-								<h3><%- mini.title %></h3>
+								<h2><%- mini.title %></h2>
 								<cite><a href="<%= mini.author.url %>"><%- mini.author.name %></a></cite>
 							</li>
 						<% }); %>
@@ -144,11 +146,11 @@
 				</ul>
 
 				<ul aria-label="Social Medias">
-					<li><a href="https://www.facebook.com/techcrunch"><img src="assets/facebook.svg" alt="Facebook logo" />Facebook</a></li>
-					<li><a href="https://twitter.com/techcrunch"><img src="assets/twitter.svg" alt="Twitter logo" />Twitter</a></li>
-					<li><a href="http://www.youtube.com/user/techcrunch"><img src="assets/youtube.svg" alt="YouTube logo" />YouTube</a></li>
-					<li><a href="http://instagram.com/techcrunch"><img src="assets/instagram.svg" alt="Instagram logo" />Instagram</a></li>
-					<li><a href="http://www.linkedin.com/company/techcrunch"><img src="assets/linkedin.svg" alt="LinkedIn logo" />LinkedIn</a></li>
+					<li><a href="https://www.facebook.com/techcrunch"><img src="assets/facebook.svg" alt="Facebook logo" loading="lazy" />Facebook</a></li>
+					<li><a href="https://twitter.com/techcrunch"><img src="assets/twitter.svg" alt="Twitter logo" loading="lazy" />Twitter</a></li>
+					<li><a href="http://www.youtube.com/user/techcrunch"><img src="assets/youtube.svg" alt="YouTube logo" loading="lazy" />YouTube</a></li>
+					<li><a href="http://instagram.com/techcrunch"><img src="assets/instagram.svg" alt="Instagram logo" loading="lazy" />Instagram</a></li>
+					<li><a href="http://www.linkedin.com/company/techcrunch"><img src="assets/linkedin.svg" alt="LinkedIn logo" loading="lazy" />LinkedIn</a></li>
 				</ul>
 			</nav>
 
