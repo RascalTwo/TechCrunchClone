@@ -30,7 +30,7 @@ const parsePost = (raw: any): Post => {
 			alt: image.title.rendered
 		},
 		datetime: new Date(raw.date).getTime(),
-		excerpt: raw.excerpt.rendered
+		excerpt: new JSDOM(raw.excerpt.rendered).window.document.body.textContent!
 	}
 }
 
