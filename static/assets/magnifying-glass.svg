@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--search icon--black" viewBox="0 0 20 20" version="1.1" aria-labelledby="title">
+	<title>search</title>
+	<g>
+		<ellipse cx="9.1" cy="8.7" rx="7" ry="7.2"></ellipse>
+		<path d="M18.9,18.7l-4.7-4.8"></path>
+	</g>
+</svg>

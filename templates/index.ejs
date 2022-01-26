@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TechCrunch - Startup and Technology news</title>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="https://techcrunch.com/"><object data="assets/logo.svg" title="Tech Crunch logo" type="image/svg+xml"></object></a></li>
+					<li><a href="https://oidc.techcrunch.com/login/?prompt=login&dest=https%3A%2F%2Ftechcrunch.com%2F">Login</a></li>
+					<li>
+						<details>
+							<summary>Search</summary>
+
+							<form action="https://search.techcrunch.com/search">
+								<input type="search" placeholder="Search" name="p">
+								<input type="image" src="assets/magnifying-glass.svg" alt="magnifying glass" />
+							</form>
+						</details>
+					</li>
+					<li><a href="https://techcrunch.com/startups/">Startups</a></li>
+					<li><a href="https://techcrunch.com/techcruchplus/">TechCrunch+</a></li>
+					<li><a href="https://techcrunch.com/pages/podcasts/">Audio</a></li>
+					<li><a href="https://techcrunch.com/newsletters/">Newsletters</a></li>
+					<li><a href="https://techcrunch.com/video/">Videos</a></li>
+					<li><a href="https://techcrunch.com/pages/advertisement-events-calendar">Advertise</a></li>
+					<li><a href="https://techcrunch.com/events/">Events</a></li>
+					<li>
+						<details>
+							<summary>More</summary>
+
+							<li><a href="https://techcrunch.com/"><img src="assets/logo.svg" alt="Tech Crunch logo" /></a></li>
+							<span>More TechCrunch</span>
+							<ul>
+								<li><a href="https://techcrunch.com/startup-battlefield/">Startup Battlefield</a></li>
+								<li><a href="https://techcrunch.com/sponsored/">Sponsored Content</a></li>
+								<li><a href="https://techcrunch.com/startups/">Include</a></li>
+								<li><a href="https://crunchbase.com/">Crunchbase</a></li>
+								<li><a href="https://www.crunchbase.com/">Crunchboard</a></li>
+								<li><a href="https://techcrunch.com/pages/contact-us/">Contact Us</a></li>
+							</ul>
+						</details>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<section>
+					<h1><%- featured[0].title %></h1>
+					<cite><a href="<%= featured[0].author.url %>"><%- featured[0].author.name %></a></cite>
+					<img src="<%= featured[0].image.url %>" alt="<%= featured[0].image.alt %>" />
+				</section>
+				<section>
+					<ul>
+						<% featured.slice(1).forEach(mini => { %>
+							<li>
+								<h3><%- mini.title %></h3>
+								<cite><a href="<%= mini.author.url %>"><%- mini.author.name %></a></cite>
+							</li>
+						<% }); %>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h2>The Latest</h2>
+				<ul>
+					<% posts.slice(0, 9).forEach(post => { %>
+						<%- include('post', { post }); %>
+					<% }); %>
+				</ul>
+				<section>
+					<h2>Sign up for Newsletters</h2>
+					<a href="https://link.techcrunch.com/join/134/signup-all-newsletters">See all newsletters</a>
+					<form>
+						<label><input type="checkbox" value="Readership" />Daily</label>
+						<label><input type="checkbox" value="Readership-wkend" />Week in Review</label>
+						<label><input type="checkbox" value="Readership-startups" />Startups Weekly</label>
+						<label><input type="checkbox" value="Readership-event-updates" />Event Updates</label>
+						<label><input type="checkbox" value="Readership-sponsorship" />Advertising Updates</label>
+						<label><input type="checkbox" value="Extra Crunch Announcements" />TechCrunch+ Announcements</label>
+						<label><input type="checkbox" value="Extra Crunch Events" />TechCrunch+ Events</label>
+						<label><input type="checkbox" value="Extra Crunch Daily Newsletter" />TechCrunch+ Roundup</label>
+						<input type="email" placeholder="Email" required />
+						<button type="submit">Subscribe</button>
+					</form>
+				</section>
+				<ul>
+					<% posts.slice(9, 11).forEach(post => { %>
+						<%- include('post', { post }); %>
+					<% }); %>
+				</ul>
+				<section>
+					<h2>Where we'll be next</h2>
+					<ul>
+						<% events.forEach(event => { %>
+							<li>
+								<h3><%- event.title %></h3>
+								<time datetime="<%= new Date(event.datetime).toISOString() %>"><%- monthAndDay(new Date(event.datetime)) %> </time>
+								<% if (event.location) { %>
+								<address><%- event.location %></address>
+								<% } %>
+							</li>
+						<% }); %>
+					</ul>
+				</section>
+				<ul>
+					<% posts.slice(11).forEach(post => { %>
+						<%- include('post', { post }); %>
+					<% }); %>
+				</ul>
+			</section>
+		</main>
+		<footer>
+			<nav>
+				<h3>About</h3>
+				<ul>
+					<li><a href="https://techcrunch.com/">TechCrunch</a></li>
+					<li><a href="https://techcrunch.com/pages/about-techcrunch">Staff</a></li>
+					<li><a href="https://techcrunch.com/pages/contact-us/">Contact Us</a></li>
+					<li><a href="https://techcrunch.com/pages/advertisement-events-calendar/">Advertise</a></li>
+				</ul>
+
+				<h3>Legal</h3>
+				<ul>
+					<li><a href="https://legal.yahoo.com/us/en/yahoo/privacy/index.html">Privacy Policy</a></li>
+					<li><a href="https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html">Terms of Service</a></li>
+					<li><a href="https://techcrunch.com/pages/extra-crunch-terms-of-service/">TechCrunch+ Terms</a></li>
+					<li><a href="https://guce.techcrunch.com/privacy-dashboard?locale=en-US">Privacy Dashboard</a></li>
+					<li><a href="https://techcrunch.com/pages/code-of-conduct/">Code of Conduct</a></li>
+					<li><a href="https://legal.yahoo.com/us/en/yahoo/privacy/adinfo/index.html">About Our Ads</a></li>
+					<li><a href="https://techcrunch.com/">International</a></li>
+				</ul>
+
+				<h3>International</h3>
+				<ul>
+					<li><a href="http://jp.techcrunch.com/">Japan</a></li>
+				</ul>
+
+				<ul aria-label="Social Medias">
+					<li><a href="https://www.facebook.com/techcrunch"><img src="assets/facebook.svg" alt="Facebook logo" />Facebook</a></li>
+					<li><a href="https://twitter.com/techcrunch"><img src="assets/twitter.svg" alt="Twitter logo" />Twitter</a></li>
+					<li><a href="http://www.youtube.com/user/techcrunch"><img src="assets/youtube.svg" alt="YouTube logo" />YouTube</a></li>
+					<li><a href="http://instagram.com/techcrunch"><img src="assets/instagram.svg" alt="Instagram logo" />Instagram</a></li>
+					<li><a href="http://www.linkedin.com/company/techcrunch"><img src="assets/linkedin.svg" alt="LinkedIn logo" />LinkedIn</a></li>
+				</ul>
+			</nav>
+
+			<span>© 2022 Yahoo. All rights reserved. Powered by <a href="https://wpvip.com/">WordPress VIP</a>.</span>
+		</footer>
+	</body>
+
+</html>
