@@ -16,6 +16,16 @@ a:is(:hover, :focus, :active) {
 	text-decoration: underline;
 }
 
+h2 {
+	font-size: 2rem;
+}
+
+h1, h3 {
+	font-size: 3rem;
+	padding: 0;
+	margin: 0;
+}
+
 
 ul {
 	list-style: none;
@@ -30,9 +40,6 @@ header {
 	font-size: 2rem;
 	color: grey;
 	margin-left: 1vw;
-}
-header > ul {
-	margin: 2.5%;
 }
 
 header ul li {
@@ -52,7 +59,19 @@ header details span {
 
 main {
 	margin-left: 15vw;
+	width: 80vw;
 }
+
+@media (max-width: 1000px) {
+	header > nav {
+		display: none;
+	}
+	main {
+		margin-left: 1vw;
+		width: auto;
+	}
+}
+
 
 .hero {
 	overflow: auto;
@@ -64,7 +83,16 @@ main {
 }
 .hero > section:nth-of-type(2) {
 	margin-left: 1vw;
-	width: 30vw;
+	width: 25vw;
+}
+@media (max-width: 8000px) {
+	.hero > section {
+		float: none;
+		width: auto;
+	}
+	.hero > section:nth-of-type(2) {
+		width: auto;
+	}
 }
 
 
@@ -78,15 +106,6 @@ img {
 	position: relative;
 	overflow: hidden;
 	margin: 2.5% 0;
-	width: 80vw;
-}
-
-.post a:is(:hover, :active, :focus) {
-	text-decoration: none;
-}
-
-p {
-	font-size: 2rem;
 }
 
 .post > * {
@@ -94,6 +113,25 @@ p {
 	float: left;
 }
 
+@media (max-width: 800px) {
+	.post > * {
+		width: 50%;
+	}
+	.post p {
+		display: none;
+	}
+	.post h3 {
+		font-size: 2rem;
+	}
+}
+
+.post a:is(:hover, :active, :focus) {
+	text-decoration: none;
+}
+
+.post p {
+	font-size: 2rem;
+}
 .post img {
 	margin: 2.5%;
 }
@@ -117,16 +155,6 @@ time {
 	width: 75%;
 	display: block;
 	margin: auto;
-}
-
-h2 {
-	font-size: 2rem;
-}
-
-h1, h3 {
-	font-size: 3rem;
-	padding: 0;
-	margin: 0;
 }
 
 cite {
