@@ -85,7 +85,7 @@ main {
 	margin-left: 1vw;
 	width: 25vw;
 }
-@media (max-width: 8000px) {
+@media (max-width: 800px) {
 	.hero > section {
 		float: none;
 		width: auto;
@@ -171,4 +171,55 @@ cite {
 	bottom: 0;
 	background: rgba(255, 255, 255, 0.25);
 	pointer-events: none;
+}
+
+.newsletters > * {
+	float: left;
+}
+.newsletters > div {
+	width: 33.33%;
+}
+.newsletters > form {
+	width: 66.66%;
+}
+
+.newsletters > form > div {
+	overflow: auto;
+	width: 100%;
+}
+.newsletters > form > div > div {
+	float: left;
+	width: 33.33%;
+}
+
+.newsletters > form > div > div > label {
+	display: block;
+}
+
+.newsletters input[type="email"] {
+	width: 70%;
+	border: 0;
+	margin: 1rem 0;
+}
+
+.newsletters button {
+	background: #ddd;
+	border: 0;
+	padding: 1rem 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+	.newsletters > * {
+		float: none;
+		width: auto;
+		margin: auto;
+		text-align: center;
+	}
+	.newsletters > form > div > div {
+		float: none;
+		width: auto;
+	}
 }
