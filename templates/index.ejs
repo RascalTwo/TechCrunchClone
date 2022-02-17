@@ -8,6 +8,7 @@
 		<meta name="description" content="TechCrunch - Reporting on the business of technology, startups, venture capital funding, and Silicon Valley" />
 		<link rel="icon" href="assets/favicon.ico" />
 		<title>TechCrunch - Startup and Technology news</title>
+		<link rel="stylesheet" href="index.css" />
 	</head>
 
 	<body>
@@ -38,6 +39,7 @@
 							<summary>More</summary>
 
 							<a href="https://techcrunch.com/"><img src="assets/logo.svg" alt="Tech Crunch logo" /></a>
+							<br/>
 							<span>More TechCrunch</span>
 							<ul>
 								<li><a href="https://techcrunch.com/startup-battlefield/">Startup Battlefield</a></li>
@@ -53,17 +55,19 @@
 			</nav>
 		</header>
 		<main>
-			<section>
+			<section class="hero">
 				<section>
-					<h1><%- featured[0].title %></h1>
+					<h1><a href="<%= featured[0].url %>"><%- featured[0].title %></a></h1>
 					<cite><a href="<%= featured[0].author.url %>"><%- featured[0].author.name %></a></cite>
-					<img src="<%= featured[0].image.url %>" alt="<%= featured[0].image.alt %>" loading="lazy" />
+					<a href="<%= featured[0].url %>">
+						<img src="<%= featured[0].image.url %>" alt="<%= featured[0].image.alt %>" loading="lazy" />
+					</a>
 				</section>
 				<section>
 					<ul>
 						<% featured.slice(1).forEach(mini => { %>
 							<li>
-								<h2><%- mini.title %></h2>
+								<h2><a href="<%= mini.url %>"><%- mini.title %></a></h2>
 								<cite><a href="<%= mini.author.url %>"><%- mini.author.name %></a></cite>
 							</li>
 						<% }); %>

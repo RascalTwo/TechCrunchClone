@@ -1,0 +1,146 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:is(:hover, :focus, :active) {
+	text-decoration: underline;
+}
+
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 2rem;
+	color: grey;
+	margin-left: 1vw;
+}
+header > ul {
+	margin: 2.5%;
+}
+
+header ul li {
+	margin-bottom: 1rem;
+	max-width: 14vw;
+}
+
+header object {
+	width: 5vw;
+}
+
+header details span {
+	color: black;
+	margin-bottom: 1rem;
+	display: inline-block;
+}
+
+main {
+	margin-left: 15vw;
+}
+
+.hero {
+	overflow: auto;
+}
+
+.hero > section {
+	float: left;
+	width: 50vw;
+}
+.hero > section:nth-of-type(2) {
+	margin-left: 1vw;
+	width: 30vw;
+}
+
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	padding: 1rem;
+}
+
+.post {
+	position: relative;
+	overflow: hidden;
+	margin: 2.5% 0;
+	width: 80vw;
+}
+
+.post a:is(:hover, :active, :focus) {
+	text-decoration: none;
+}
+
+p {
+	font-size: 2rem;
+}
+
+.post > * {
+	width: 33%;
+	float: left;
+}
+
+.post img {
+	margin: 2.5%;
+}
+
+time {
+	color: grey;
+}
+
+.post time, .post cite {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.post cite {
+	position: absolute;
+	left: 0;
+	bottom: 2rem;
+}
+
+.post p a {
+	width: 75%;
+	display: block;
+	margin: auto;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h1, h3 {
+	font-size: 3rem;
+	padding: 0;
+	margin: 0;
+}
+
+cite {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.post:is(:hover, :active, :focus, :focus-within)::after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.25);
+	pointer-events: none;
+}
