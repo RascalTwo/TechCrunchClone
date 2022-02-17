@@ -114,16 +114,20 @@
 						<%- include('post', { post }); %>
 					<% }); %>
 				</ul>
-				<section>
+				<section class="events">
 					<h2>Where we'll be next</h2>
 					<ul>
 						<% events.forEach(event => { %>
 							<li>
-								<h3><%- event.title %></h3>
-								<time datetime="<%= new Date(event.datetime).toISOString() %>"><%- monthAndDay(new Date(event.datetime)) %> </time>
-								<% if (event.location) { %>
-								<address><%- event.location %></address>
-								<% } %>
+								<div>
+									<h3><a href="<%= event.url %>"><%- event.title %></a></h3>
+									<time datetime="<%= new Date(event.datetime).toISOString() %>"><%- monthAndDay(new Date(event.datetime)) %> </time>
+									<% if (event.location) { %>
+									<address><%- event.location %></address>
+									<% } %>
+								</div>
+								<a href="<%= event.url %>#tickets">Buy Tickets</a>
+								<a href="https://info.techcrunch.com/SponsorshipsInterest.html">Be a Sponsor</a>
 							</li>
 						<% }); %>
 					</ul>

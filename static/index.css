@@ -120,9 +120,6 @@ img {
 	.post p {
 		display: none;
 	}
-	.post h3 {
-		font-size: 2rem;
-	}
 }
 
 .post a:is(:hover, :active, :focus) {
@@ -131,6 +128,14 @@ img {
 
 .post p {
 	font-size: 2rem;
+}
+@media (max-width: 1000px) {
+	.post p {
+		font-size: 1rem;
+	}
+	.post h3 {
+		font-size: 2rem;
+	}
 }
 .post img {
 	margin: 2.5%;
@@ -173,6 +178,9 @@ cite {
 	pointer-events: none;
 }
 
+.newsletters {
+	overflow: auto;
+}
 .newsletters > * {
 	float: left;
 }
@@ -222,4 +230,65 @@ cite {
 		float: none;
 		width: auto;
 	}
+}
+
+.events ul {
+	overflow: scroll;
+	white-space: nowrap;
+}
+
+.events li {
+	width: 30%;
+	padding: 2rem;
+	display: inline-block;
+	height: 50vmin;
+	white-space: normal;
+}
+
+.events div {
+	height: 25vmin;
+	position: relative;
+}
+
+.events div::after {
+	content: " ";
+	width: 33%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border: 2px solid #36c275;
+}
+
+.events h3 {
+	background: linear-gradient(79deg,#00d301,#36c275 50%,#00a562);
+	background-clip: text;
+  -webkit-text-fill-color: transparent;
+	font-size: 2rem;
+}
+
+.events time {
+	font-weight: bold;
+	color: black;
+}
+
+.events address {
+	color: grey;
+}
+
+.events li > a {
+	padding: 1rem;
+	display: block;
+	text-align: center;
+	margin-top: 1rem;
+}
+.events li > a:is(:hover, :active, :focus) {
+	text-decoration: none;
+}
+
+.events li > a:nth-of-type(1) {
+	background: linear-gradient(79deg,#00d301,#36c275 50%,#00a562);
+	color: white;
+}
+.events li > a:nth-of-type(2) {
+	border: 2px solid black;
 }
