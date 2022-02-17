@@ -57,7 +57,7 @@ header details span {
 	display: inline-block;
 }
 
-main {
+main, footer {
 	margin-left: 15vw;
 	width: 80vw;
 }
@@ -66,7 +66,7 @@ main {
 	header > nav {
 		display: none;
 	}
-	main {
+	main, footer {
 		margin-left: 1vw;
 		width: auto;
 	}
@@ -96,7 +96,7 @@ main {
 }
 
 
-img {
+section img {
 	max-width: 100%;
 	max-height: 100%;
 	padding: 1rem;
@@ -238,10 +238,10 @@ cite {
 }
 
 .events li {
-	width: 30%;
+	width: 30vmin;
 	padding: 2rem;
 	display: inline-block;
-	height: 50vmin;
+	height: max-content;
 	white-space: normal;
 }
 
@@ -291,4 +291,31 @@ cite {
 }
 .events li > a:nth-of-type(2) {
 	border: 2px solid black;
+}
+
+footer h3 {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+footer nav{
+	overflow: hidden;
+}
+
+footer img {
+	height: 1.5rem;
+	padding-right: 1rem;
+}
+
+footer ul {
+	width: 20%;
+	float: left;
+}
+
+footer li a {
+	color: grey;
+}
+
+footer ul:last-of-type {
+	float: right;
 }
