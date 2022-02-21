@@ -66,7 +66,8 @@ cacheOrFetch('https://techcrunch.com/', 'index.html', process.env.NODE_ENV !== '
 		timeAndDate, monthAndDay,
 		featured,
 		posts,
-		events
+		events,
+		now: Date.now()
 	}).then(html => fs.promises.writeFile(path.join('static', 'index.html'), html));
 
 }).catch(console.error)
