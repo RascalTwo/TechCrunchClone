@@ -6,9 +6,9 @@ import ejs from 'ejs';
 import { Event, Post } from './types';
 
 
-const cacheOrFetch = (url: string, slug: string): Promise<string> => {
-	const cachePath = path.join('cache', slug);
-	if (false && fs.existsSync(cachePath)) return fs.promises.readFile(cachePath).then(b => b.toString())
+const cacheOrFetch = (url: string, slug: string, cache: boolean): Promise<string> => {
+	const cachePath = path.join('cache.' + slug);
+	if (cache && fs.existsSync(cachePath)) return fs.promises.readFile(cachePath).then(b => b.toString())
 	return fetch(url)
 		.then(r => r.text())
 		.then(t => fs.promises.writeFile(cachePath, t).then(() => t))
@@ -55,7 +55,7 @@ const monthAndDay = (date: Date) => {
 	return date.toLocaleString('default', { month: 'short' }) + ' ' + date.getDate()
 }
 
-cacheOrFetch('https://techcrunch.com/', 'index.html').then(html => {
+cacheOrFetch('https://techcrunch.com/', 'index.html', process.env.NODE_ENV !== 'production').then(html => {
 	const dom = new JSDOM(html, { url: 'https://techcrunch.com/' });
 	const data = JSON.parse(dom.window.document.querySelector('script#tc-app-js-extra')!.textContent!.split(' = ').slice(1).join(' = ').trim().slice(0, -1));
 	const featured = data.feature_islands.homepage.map(parsePost);
