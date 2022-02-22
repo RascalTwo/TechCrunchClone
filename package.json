@@ -1,14 +1,21 @@
 {
   "dependencies": {
+    "@types/ejs": "^3.1.0",
+    "@types/jsdom": "^16.2.14",
+    "@types/node-fetch": "^2.5.12",
     "ejs": "^3.1.6",
     "jsdom": "^19.0.0",
     "node-fetch": "^2.6.6",
-    "ts-node": "^10.4.0",
-    "@types/ejs": "^3.1.0",
-    "@types/jsdom": "^16.2.14",
-    "@types/node-fetch": "^2.5.12"
+    "ts-node": "^10.4.0"
   },
   "scripts": {
-    "build": "ts-node generate.ts"
+    "build": "ts-node generate.ts",
+    "dev": "nodemon generate.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "ext": ".ejs,.ts"
   }
 }
