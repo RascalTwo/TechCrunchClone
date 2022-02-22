@@ -16,13 +16,24 @@ a:is(:hover, :focus, :active) {
 	text-decoration: underline;
 }
 
-h2 {
-	font-size: 2rem;
+h1, h2, h3 {
+	font-weight: bold;
 }
 
-h1, h3 {
+h1 {
 	font-size: 3rem;
-	padding: 0;
+	letter-spacing: -.25rem;
+	margin: 0;
+}
+
+h2 {
+	font-size: 1.5rem;
+	letter-spacing: -0.125rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+	letter-spacing: -0.125rem;
 	margin: 0;
 }
 
@@ -32,14 +43,18 @@ ul {
 	padding: 0;
 }
 
+summary::marker {
+	content: "";
+}
+
 
 header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	font-size: 2rem;
-	color: grey;
-	margin-left: 1vw;
+	font-size: 1.75rem;
+	color: rgb(119, 119, 119);
+	margin-left: 2vw;
 }
 
 .search {
@@ -86,7 +101,12 @@ header ul li {
 }
 
 header object {
-	width: 5vw;
+	width: 6.25vw;
+}
+
+header li:nth-of-type(2) {
+	font-size: 1.25rem;
+	color: black;
 }
 
 header details span {
@@ -97,16 +117,16 @@ header details span {
 
 main, footer {
 	margin-left: 15vw;
-	width: 80vw;
+	width: 60vw;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
 	header > nav {
 		display: none;
 	}
 	main, footer {
 		margin-left: 1vw;
-		width: auto;
+		width: 75vw;
 	}
 }
 
@@ -117,12 +137,27 @@ main, footer {
 
 .hero > section {
 	float: left;
-	width: 50vw;
+	width: 35vw;
 }
 .hero > section:nth-of-type(2) {
 	margin-left: 1vw;
-	width: 25vw;
+	width: 20vw;
 }
+.hero > section:nth-of-type(2)  li {
+	border-top: 1px solid hsla(0, 0%, 50%, 0.33);
+	margin-bottom: 2.5%;
+}
+
+
+@media (max-width: 1200px) {
+	.hero > section {
+		width: 45vw;
+	}
+	.hero > section:nth-of-type(2) {
+		width: 20vw;
+	}
+}
+
 @media (max-width: 800px) {
 	.hero > section {
 		float: none;
@@ -140,10 +175,16 @@ section img {
 	padding: 1rem;
 }
 
+.hero img {
+	padding: 0
+}
+
 .post {
 	position: relative;
 	overflow: hidden;
-	margin: 2.5% 0;
+	margin-bottom: 2.5%;
+	padding-top: 2.5%;
+	border-top: 1px solid hsla(0, 0%, 50%, 0.33);
 }
 
 .post > * {
@@ -159,6 +200,14 @@ section img {
 		display: none;
 	}
 }
+@media (max-width: 600px) {
+	.post > div {
+		width: 66.66%;
+	}
+	.post > a {
+		width: 33.33%;
+	}
+}
 
 .post a:is(:hover, :active, :focus) {
 	text-decoration: none;
@@ -166,6 +215,7 @@ section img {
 
 .post p {
 	font-size: 2rem;
+	margin: 0;
 }
 @media (max-width: 1000px) {
 	.post p {
@@ -173,6 +223,12 @@ section img {
 	}
 	.post h3 {
 		font-size: 2rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.post h3 {
+		font-size: 1.5rem;
 	}
 }
 .post img {
@@ -195,9 +251,9 @@ time {
 }
 
 .post p a {
-	width: 75%;
 	display: block;
-	margin: auto;
+	font-size: 1.25rem;
+	color: rgb(119, 119, 119);
 }
 
 cite {
