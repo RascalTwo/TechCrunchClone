@@ -1,6 +1,23 @@
+:root {
+	--background-color: white;
+	--primary-color: black;
+	--secondary-color: rgb(119, 119, 119)
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+		--background-color: hsl(0, 0%, 10%);
+		--primary-color: hsl(0, 0%, 90%);
+		--secondary-color: rgb(159, 159, 159)
+	}
+}
+
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
+	background-color: var(--background-color);
+	color: var(--primary-color);
 }
 
 *, *::before, *::after {
@@ -53,7 +70,7 @@ header {
 	top: 0;
 	left: 0;
 	font-size: 1.75rem;
-	color: rgb(119, 119, 119);
+	color: var(--secondary-color);
 	margin-left: 2vw;
 }
 
@@ -65,8 +82,8 @@ header {
 }
 
 .search[open] {
-	background: black;
-	color: white;
+	background: var(--primary-color);
+	color: var(--background-color);
 }
 .search[open] summary {
 	content: "Close Search";
@@ -91,9 +108,6 @@ header {
 	width: 15%;
 }
 
-form {
-	background: white;
-}
 
 header ul li {
 	margin-bottom: 1rem;
@@ -106,11 +120,11 @@ header object {
 
 header li:nth-of-type(2) {
 	font-size: 1.25rem;
-	color: black;
+	color: var(--primary-color);
 }
 
 header details span {
-	color: black;
+	color: var(--primary-color);
 	margin-bottom: 1rem;
 	display: inline-block;
 }
@@ -236,7 +250,7 @@ section img {
 }
 
 time {
-	color: grey;
+	color: var(--secondary-color);
 }
 
 .post time, .post cite {
@@ -253,7 +267,7 @@ time {
 .post p a {
 	display: block;
 	font-size: 1.25rem;
-	color: rgb(119, 119, 119);
+	color: var(--secondary-color);
 }
 
 cite {
@@ -362,11 +376,11 @@ cite {
 
 .events time {
 	font-weight: bold;
-	color: black;
+	color: var(--primary-color);
 }
 
 .events address {
-	color: grey;
+	color: var(--secondary-color);
 }
 
 .events li > a {
@@ -384,7 +398,7 @@ cite {
 	color: white;
 }
 .events li > a:nth-of-type(2) {
-	border: 2px solid black;
+	border: 2px solid var(--primary-color);
 }
 
 footer h3 {
