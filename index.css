@@ -13,11 +13,24 @@
 	}
 }
 
+:root.dark-theme {
+	--background-color: hsl(0, 0%, 10%);
+	--primary-color: hsl(0, 0%, 90%);
+	--secondary-color: rgb(159, 159, 159)
+}
+
+:root.light-theme {
+	--background-color: white;
+	--primary-color: black;
+	--secondary-color: rgb(119, 119, 119)
+}
+
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
 	background-color: var(--background-color);
 	color: var(--primary-color);
+	transition: 250ms all;
 }
 
 *, *::before, *::after {
@@ -81,6 +94,20 @@ body > a:is(:hover, :focus, :active){
 	opacity: 1;
 	top: 5%;
 	left: 5%;
+}
+
+#toggle-theme {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: var(--primary-color);
+	color: var(--background-color);
+	cursor: pointer;
+	padding: 1rem;
+	border-bottom-left-radius: 1rem;
+	margin: 0;
+	border-top: 0;
+	border-right: 0;
 }
 
 header {
